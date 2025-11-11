@@ -1,0 +1,322 @@
+:root {
+  --laundrypad-container-padding: clamp(1.5rem, 5vw, 4rem);
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+.wp-site-blocks {
+  background-color: var(--wp--preset--color--white);
+}
+
+.wp-block-group.alignwide.laundrypad-hero {
+  padding-left: var(--laundrypad-container-padding);
+  padding-right: var(--laundrypad-container-padding);
+  overflow: hidden;
+  position: relative;
+}
+
+.laundrypad-hero .wp-block-column:first-child {
+  max-width: 520px;
+}
+
+.laundrypad-hero .hero-illustration img {
+  width: 100%;
+  max-width: 560px;
+  filter: drop-shadow(0 22px 40px rgba(15, 23, 42, 0.22));
+}
+
+.hero-logo-row img {
+  height: 28px;
+  width: auto;
+  opacity: 0.85;
+}
+
+@media (max-width: 1024px) {
+  .laundrypad-hero .wp-block-columns {
+    flex-direction: column;
+  }
+
+  .laundrypad-hero .wp-block-column:last-child {
+    padding-left: 0 !important;
+  }
+
+  .laundrypad-hero .hero-illustration img {
+    max-width: 420px;
+  }
+}
+
+.wp-block-group.laundrypad-features .feature-card,
+.wp-block-group.laundrypad-steps .step-card,
+.wp-block-group.laundrypad-testimonials .testimonial-card,
+.wp-block-group.laundrypad-pricing .pricing-card,
+.wp-block-group.laundrypad-stats .stat-card {
+  background: var(--wp--preset--color--white);
+  border-radius: var(--wp--custom--laundrypad--radii--lg);
+  box-shadow: 0 16px 42px rgba(15, 23, 42, 0.08);
+  padding: 2rem;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.feature-card:hover,
+.feature-card:focus-within,
+.step-card:hover,
+.step-card:focus-within,
+.testimonial-card:hover,
+.testimonial-card:focus-within,
+.pricing-card:hover,
+.pricing-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
+}
+
+.feature-card .feature-icon img,
+.step-card .step-illustration img {
+  width: 72px;
+  height: auto;
+}
+
+.feature-card .feature-link a {
+  font-weight: 600;
+  color: var(--wp--preset--color--primary);
+  position: relative;
+  padding-bottom: 0.2rem;
+}
+
+.feature-card .feature-link a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 220ms ease;
+}
+
+.feature-card .feature-link a:hover::after,
+.feature-card .feature-link a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.laundrypad-steps .step-badge {
+  display: inline-flex;
+}
+
+.laundrypad-steps .step-illustration img {
+  width: 100%;
+  max-width: 240px;
+  margin-top: 1rem;
+}
+
+.laundrypad-stats .logo-grid img {
+  max-width: 140px;
+  opacity: 0.85;
+}
+
+.laundrypad-testimonials .avatar img {
+  border-radius: 50%;
+}
+
+.laundrypad-pricing .pricing-toggle {
+  gap: 0.25rem;
+}
+
+.laundrypad-pricing .toggle-option {
+  border: none;
+  background: transparent;
+  color: var(--wp--preset--color--neutral-500);
+  font-weight: 600;
+  font-family: var(--wp--preset--font-family--plus-jakarta-sans);
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  transition: background-color 220ms ease, color 220ms ease;
+}
+
+.laundrypad-pricing .toggle-option.is-active {
+  background: var(--wp--preset--color--white);
+  color: var(--wp--preset--color--primary);
+  box-shadow: inset 0 0 0 1px rgba(79, 70, 229, 0.16);
+}
+
+.laundrypad-pricing .pricing-card {
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  position: relative;
+}
+
+.laundrypad-pricing .pricing-card.is-featured {
+  background: linear-gradient(180deg, rgba(79, 70, 229, 0.08) 0%, rgba(14, 165, 233, 0.05) 100%);
+  border-color: rgba(79, 70, 229, 0.32);
+}
+
+.laundrypad-pricing .price-frequency {
+  font-size: 1rem;
+  margin-left: 0.25rem;
+  color: var(--wp--preset--color--neutral-500);
+}
+
+.laundrypad-pricing .pricing-features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.laundrypad-pricing .pricing-features li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.laundrypad-pricing .pricing-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 999px;
+  background: url('../assets/img/icon-check.svg') no-repeat center/contain;
+}
+
+.faq-accordion details {
+  border-radius: var(--wp--custom--laundrypad--radii--md);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  padding: 1.25rem 1.5rem;
+  background: var(--wp--preset--color--white);
+  transition: border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.faq-accordion details[open] {
+  border-color: var(--wp--preset--color--primary);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.faq-accordion summary {
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.faq-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-accordion summary::after {
+  content: '+';
+  float: right;
+  font-weight: 700;
+  transition: transform 220ms ease;
+}
+
+.faq-accordion details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.navigation-drawer {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.72);
+  display: grid;
+  place-items: center;
+  z-index: 999;
+}
+
+.navigation-drawer .drawer-inner {
+  background: var(--wp--preset--color--white);
+  width: min(90vw, 420px);
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: var(--wp--custom--laundrypad--shadows--lg);
+}
+
+.navigation-drawer[hidden] {
+  display: none;
+}
+
+.mobile-menu-toggle {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .is-style-laundrypad-nav > .wp-block-navigation,
+  .is-style-laundrypad-nav > .wp-block-buttons:first-of-type {
+    display: none !important;
+  }
+
+  .mobile-menu-toggle {
+    display: flex !important;
+  }
+}
+
+.drawer-close .wp-block-button__link {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+header.wp-block-group {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.wp-block-group.navigation-drawer .wp-block-navigation__container {
+  gap: 1rem;
+}
+
+.wp-block-group.navigation-drawer .wp-block-navigation-item__content {
+  font-size: 1.25rem;
+}
+
+.wp-block-template-part footer .wp-block-navigation {
+  justify-content: flex-end;
+  gap: 1.5rem;
+}
+
+.wp-block-buttons .wp-block-button__link {
+  transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease, color 220ms ease;
+}
+
+.wp-block-buttons .wp-block-button__link:focus-visible {
+  outline: 3px solid rgba(14, 165, 233, 0.8);
+  outline-offset: 3px;
+}
+
+.wp-block-buttons .wp-block-button__link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(79, 70, 229, 0.18);
+}
+
+.laundrypad-cta .wp-block-buttons .wp-block-button__link:hover {
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.2);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+footer .wp-block-social-links .wp-social-link a:focus-visible {
+  outline: 3px solid var(--wp--preset--color--primary);
+  outline-offset: 4px;
+}
+
+.footer .wp-block-navigation__container {
+  gap: 1.5rem;
+}
+
+.wp-block-group.laundrypad-stats .wp-block-button__link {
+  padding-inline: 2.25rem;
+}
+
+.navigation-drawer .wp-block-button__link {
+  width: 100%;
+  justify-content: center;
+}

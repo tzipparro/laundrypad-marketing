@@ -1,0 +1,13 @@
+{
+  "name": "laundrypad",
+  "version": "1.0.0",
+  "description": "LaundryPad marketing landing page block theme",
+  "scripts": {
+    "build": "wp-scripts build",
+    "dev": "wp-scripts start",
+    "lint": "wp-scripts lint-js"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "26.1.0"
+  }
+}
