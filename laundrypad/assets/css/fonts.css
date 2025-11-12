@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'Inter';
+  src: local('Inter'), local('Inter Regular');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: local('Plus Jakarta Sans'), local('PlusJakartaSans-Regular');
+  font-weight: 100 800;
+  font-display: swap;
+}
